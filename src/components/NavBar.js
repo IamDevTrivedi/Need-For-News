@@ -1,96 +1,105 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
-const NavBar = () => {
-    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+export default function NavBar() {
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-    const toggleMobileMenu = () => {
-        setIsMobileMenuOpen((prev) => !prev);
-    };
+    const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
     return (
-        <nav className="bg-[#004E98] text-[#C0C0C0] shadow-md">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex justify-between h-16">
-                    {/* Logo Section */}
-                    <div className="flex-shrink-0 flex items-center">
-                        <span className="text-2xl font-bold tracking-wide">NewsApp</span>
-                    </div>
+        <nav className='bg-black text-gray-200 py-4 md:px-16'>
 
-                    {/* Desktop Navigation Links */}
-                    <div className="hidden md:flex space-x-8 items-center">
-                        <a href="#" className="hover:text-white transition duration-300">
-                            Home
-                        </a>
-                        <a href="#" className="hover:text-white transition duration-300">
-                            World
-                        </a>
-                        <a href="#" className="hover:text-white transition duration-300">
-                            Sports
-                        </a>
-                        <a href="#" className="hover:text-white transition duration-300">
-                            Entertainment
-                        </a>
-                    </div>
-
-                    {/* Mobile Menu Button */}
-                    <div className="flex items-center md:hidden">
-                        <button
-                            type="button"
-                            onClick={toggleMobileMenu}
-                            className="text-[#C0C0C0] hover:text-white focus:outline-none"
-                        >
-                            <svg
-                                className="h-6 w-6"
-                                xmlns="http://www.w3.org/2000/svg"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="currentColor"
-                            >
-                                <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    strokeWidth="2"
-                                    d={isMobileMenuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"}
-                                />
-                            </svg>
-                        </button>
-                    </div>
+            <div className='hidden md:flex gap-2 md:gap-4 items-center justify-between'>
+                <div className='text-3xl font-bold'>
+                    <a href='/'>Need For News</a>
                 </div>
 
-                {/* Mobile Menu */}
-                {isMobileMenuOpen && (
-                    <div className="md:hidden">
-                        <div className="space-y-1 px-2 pt-2 pb-3">
-                            <a
-                                href="#"
-                                className="block px-3 py-2 rounded-md text-base font-medium hover:bg-[#3A6EA5] hover:text-white"
-                            >
-                                Home
-                            </a>
-                            <a
-                                href="#"
-                                className="block px-3 py-2 rounded-md text-base font-medium hover:bg-[#3A6EA5] hover:text-white"
-                            >
-                                World
-                            </a>
-                            <a
-                                href="#"
-                                className="block px-3 py-2 rounded-md text-base font-medium hover:bg-[#3A6EA5] hover:text-white"
-                            >
-                                Sports
-                            </a>
-                            <a
-                                href="#"
-                                className="block px-3 py-2 rounded-md text-base font-medium hover:bg-[#3A6EA5] hover:text-white"
-                            >
-                                Entertainment
-                            </a>
+                <div className='text-lg flex gap-2 md:gap-6'>
+                    <button className='hover:bg-slate-900 py-1 px-4 rounded-lg hover:text-gray-50'>Entertainment</button>
+                    <button className='hover:bg-slate-900 py-1 px-4 rounded-lg hover:text-gray-50'>Sports</button>
+                    <button className='hover:bg-slate-900 py-1 px-4 rounded-lg hover:text-gray-50'>Politics</button>
+                    <button className='hover:bg-slate-900 py-1 px-4 rounded-lg hover:text-gray-50'>World</button>
+                    <button className='hover:bg-slate-900 py-1 px-4 rounded-lg hover:text-gray-50'>India</button>
+                </div>
+
+                <div className="relative">
+                    <form className="flex items-center">
+                        <input
+                            type="text"
+                            placeholder="Search"
+                            className="bg-gray-700 text-white outline-none focus:outline-none rounded-lg pl-10 pr-4 py-2"
+                        />
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 512 512"
+                            className="w-5 h-5 absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"
+                            fill="currentColor"
+                        >
+                            <path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z" />
+                        </svg>
+                    </form>
+                </div>
+            </div>
+
+
+            <div className="md:hidden px-4">
+                <div className='flex items-center justify-between'>
+                    <div className='text-2xl font-bold'>
+                        <a href='/'>Need For News</a>
+                    </div>
+
+
+                    <button
+                        onClick={toggleMenu}
+                        className="text-gray-200 focus:outline-none"
+                    >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            className="h-8 w-8"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                            strokeWidth={2}
+                        >
+                            <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                d="M4 6h16M4 12h16M4 18h16"
+                            />
+                        </svg>
+                    </button>
+                </div>
+
+
+                {isMenuOpen && (
+                    <div className="mt-4 space-y-4">
+                        <div className='text-lg flex flex-col gap-4'>
+                            <button className='hover:bg-slate-900 py-1 px-4 rounded-lg hover:text-gray-50'>Entertainment</button>
+                            <button className='hover:bg-slate-900 py-1 px-4 rounded-lg hover:text-gray-50'>Sports</button>
+                            <button className='hover:bg-slate-900 py-1 px-4 rounded-lg hover:text-gray-50'>Politics</button>
+                            <button className='hover:bg-slate-900 py-1 px-4 rounded-lg hover:text-gray-50'>World</button>
+                            <button className='hover:bg-slate-900 py-1 px-4 rounded-lg hover:text-gray-50'>India</button>
+                        </div>
+
+                        <div className="relative">
+                            <form className="flex items-center">
+                                <input
+                                    type="text"
+                                    placeholder="Search"
+                                    className="bg-gray-700 text-white outline-none focus:outline-none rounded-lg pl-10 pr-4 py-2 w-full"
+                                />
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 512 512"
+                                    className="w-5 h-5 absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"
+                                    fill="currentColor"
+                                >
+                                    <path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z" />
+                                </svg>
+                            </form>
                         </div>
                     </div>
                 )}
             </div>
         </nav>
     );
-};
-
-export default NavBar;
+}
