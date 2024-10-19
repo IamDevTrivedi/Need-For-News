@@ -1,16 +1,26 @@
 // App.js
 import './App.css';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import NavBar from './components/NavBar';
 import NewsContainer from './components/NewsContainer';
+import LoadingBar from 'react-top-loading-bar'
 
 const categories = ['general', 'business', 'entertainment', 'health', 'science', 'sports', 'technology'];
 
 function App() {
+
+  const [progress, setProgress] = useState(0) ; 
+
   return (
     <Router>
       <div className="bg-gray-900 min-h-screen">
-        <NavBar/>
+        <LoadingBar
+          color='#f11946'
+          progress={progress}
+          onLoaderFinished={() => setProgress(0)}
+        />
+        <NavBar />
 
         <Routes>
           <Route path="/" element={<Navigate replace to="/general" />} />
@@ -19,12 +29,12 @@ function App() {
             <Route
               key={category}
               path={`/${category}`}
-              element={<NewsContainer pageSize={15} country="us" category={category} />}
+              element={<NewsContainer pageSize={15} country="us" category={category} setProgress={setProgress} />}
             />
           ))}
 
           <Route path="*" element={
-              
+
             <section className="bg-white dark:bg-gray-900">
               <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
                 <div className="mx-auto max-w-screen-sm text-center">
@@ -37,6 +47,7 @@ function App() {
             </section>
 
           } />
+            
         </Routes>
       </div>
     </Router>
