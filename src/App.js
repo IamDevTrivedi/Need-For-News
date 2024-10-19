@@ -5,12 +5,14 @@ import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-d
 import NavBar from './components/NavBar';
 import NewsContainer from './components/NewsContainer';
 import LoadingBar from 'react-top-loading-bar'
+import  SearchResults  from './components/SearchResults' ; 
+
 
 const categories = ['general', 'business', 'entertainment', 'health', 'science', 'sports', 'technology'];
 
 function App() {
 
-  const [progress, setProgress] = useState(0) ; 
+  const [progress, setProgress] = useState(0);
 
   return (
     <Router>
@@ -33,6 +35,12 @@ function App() {
             />
           ))}
 
+          {/* New Search Route */}
+          <Route
+            path="/search/:query"
+            element={<SearchResults setProgress={setProgress} />}
+          />
+
           <Route path="*" element={
 
             <section className="bg-white dark:bg-gray-900">
@@ -47,7 +55,7 @@ function App() {
             </section>
 
           } />
-            
+
         </Routes>
       </div>
     </Router>

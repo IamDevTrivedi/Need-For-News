@@ -1,3 +1,4 @@
+// src/components/NavBar.js
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
@@ -16,26 +17,29 @@ export default function NavBar() {
 
     const handleSearchSubmit = (e) => {
         e.preventDefault();
-        if (searchTerm.trim()) {
-            navigate(`/search/${searchTerm}`);
-            setSearchTerm('');
+
+        const trimmedTerm = searchTerm.trim(); // Handle spaces-only input
+
+        if (trimmedTerm) {
+            navigate(`/search/${encodeURIComponent(trimmedTerm)}`); // Safe URL encoding
+            setSearchTerm(''); // Clear input after search
         }
     };
 
     return (
-        <nav className='bg-black sticky top-0 z-50 text-gray-200 py-4 px-4 lg:px-16'>
+        <nav className="bg-black sticky top-0 z-50 text-gray-200 py-4 px-4 lg:px-16">
             {/* Desktop and Tablet View */}
-            <div className='hidden md:flex flex-col lg:flex-row gap-4 items-center justify-between'>
-                <div className='text-3xl font-bold'>
-                    <Link to='/'>Need For News</Link>
+            <div className="hidden md:flex flex-col lg:flex-row gap-4 items-center justify-between">
+                <div className="text-3xl font-bold">
+                    <Link to="/">Need For News</Link>
                 </div>
 
-                <div className='text-lg flex flex-wrap justify-center gap-2 md:gap-4'>
+                <div className="text-lg flex flex-wrap justify-center gap-2 md:gap-4">
                     {categories.map((category, index) => (
                         <Link
                             key={index}
                             to={`/${category}`}
-                            className='hover:bg-slate-900 py-1 px-4 rounded-lg hover:text-gray-50 capitalize'
+                            className="hover:bg-slate-900 py-1 px-4 rounded-lg hover:text-gray-50 capitalize"
                         >
                             {category}
                         </Link>
@@ -67,9 +71,9 @@ export default function NavBar() {
 
             {/* Mobile View */}
             <div className="md:hidden">
-                <div className='flex items-center justify-between'>
-                    <div className='text-2xl font-bold'>
-                        <Link to='/'>Need For News</Link>
+                <div className="flex items-center justify-between">
+                    <div className="text-2xl font-bold">
+                        <Link to="/">Need For News</Link>
                     </div>
 
                     <button
@@ -95,12 +99,12 @@ export default function NavBar() {
 
                 {isMenuOpen && (
                     <div className="mt-4 space-y-4">
-                        <div className='text-lg flex flex-col gap-4'>
+                        <div className="text-lg flex flex-col gap-4">
                             {categories.map(category => (
                                 <Link
                                     key={category}
                                     to={`/${category}`}
-                                    className='hover:bg-slate-900 py-1 px-4 rounded-lg hover:text-gray-50 capitalize'
+                                    className="hover:bg-slate-900 py-1 px-4 rounded-lg hover:text-gray-50 capitalize"
                                 >
                                     {category}
                                 </Link>
