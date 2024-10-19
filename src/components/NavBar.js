@@ -1,24 +1,31 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 export default function NavBar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
+    const categories = ['general', 'business', 'entertainment', 'technology', 'sports', 'health'];
+
     return (
         <nav className='bg-black text-gray-200 py-4 px-4 lg:px-16'>
             {/* Desktop and Tablet View */}
             <div className='hidden md:flex flex-col lg:flex-row gap-4 items-center justify-between'>
                 <div className='text-3xl font-bold'>
-                    <a href='/'>Need For News</a>
+                    <Link to='/'>Need For News</Link>
                 </div>
 
                 <div className='text-lg flex flex-wrap justify-center gap-2 md:gap-4'>
-                    <button className='hover:bg-slate-900 py-1 px-4 rounded-lg hover:text-gray-50'>Entertainment</button>
-                    <button className='hover:bg-slate-900 py-1 px-4 rounded-lg hover:text-gray-50'>Sports</button>
-                    <button className='hover:bg-slate-900 py-1 px-4 rounded-lg hover:text-gray-50'>Politics</button>
-                    <button className='hover:bg-slate-900 py-1 px-4 rounded-lg hover:text-gray-50'>World</button>
-                    <button className='hover:bg-slate-900 py-1 px-4 rounded-lg hover:text-gray-50'>India</button>
+                    {categories.map(category => (
+                        <Link
+                            key={category}
+                            to={`/${category}`}
+                            className='hover:bg-slate-900 py-1 px-4 rounded-lg hover:text-gray-50 capitalize'
+                        >
+                            {category}
+                        </Link>
+                    ))}
                 </div>
 
                 <div className="relative w-full lg:w-auto mt-4 lg:mt-0">
@@ -44,7 +51,7 @@ export default function NavBar() {
             <div className="md:hidden">
                 <div className='flex items-center justify-between'>
                     <div className='text-2xl font-bold'>
-                        <a href='/'>Need For News</a>
+                        <Link to='/'>Need For News</Link>
                     </div>
 
                     <button
@@ -71,11 +78,15 @@ export default function NavBar() {
                 {isMenuOpen && (
                     <div className="mt-4 space-y-4">
                         <div className='text-lg flex flex-col gap-4'>
-                            <button className='hover:bg-slate-900 py-1 px-4 rounded-lg hover:text-gray-50'>Entertainment</button>
-                            <button className='hover:bg-slate-900 py-1 px-4 rounded-lg hover:text-gray-50'>Sports</button>
-                            <button className='hover:bg-slate-900 py-1 px-4 rounded-lg hover:text-gray-50'>Politics</button>
-                            <button className='hover:bg-slate-900 py-1 px-4 rounded-lg hover:text-gray-50'>World</button>
-                            <button className='hover:bg-slate-900 py-1 px-4 rounded-lg hover:text-gray-50'>India</button>
+                            {categories.map(category => (
+                                <Link
+                                    key={category}
+                                    to={`/${category}`}
+                                    className='hover:bg-slate-900 py-1 px-4 rounded-lg hover:text-gray-50 capitalize'
+                                >
+                                    {category}
+                                </Link>
+                            ))}
                         </div>
 
                         <div className="relative">

@@ -1,9 +1,10 @@
+
 import React from "react";
 
 export class NewsItem extends React.Component {
 
     render() {
-        const { image, title, description, link } = this.props;
+        const { image, title, description, link, author, publishedAt, source } = this.props;
 
         return (
             <div>
@@ -26,6 +27,13 @@ export class NewsItem extends React.Component {
                         <p className="mb-3 font-normal text-gray-400 text-sm">
                             {description}
                         </p>
+                        <div className="mb-3 font-normal text-gray-400 text-sm flex items-center justify-between">
+                            <span className="text-sm">{`By ${author || 'Unknown'} At ${new Date(publishedAt).toDateString() + " " + new Date(publishedAt).toLocaleTimeString()}`}</span>
+                            <span class="text-sm font-medium me-2 px-2.5 py-0.5 rounded bg-slate-800 text-gray-100">{source}</span>
+                        </div>
+                        <div className="my-3">
+
+                        </div>
                         <a
                             href={link}
                             target="_blank"
