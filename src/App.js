@@ -5,10 +5,10 @@ import NewsContainer from './components/NewsContainer';
 
 function App() {
   return (
-    <div className='bg-slate-700 min-w-screen'>
+    <div className='bg-gray-100 min-w-screen'>
 
       <NavBar />
-      <NewsContainer />
+      <NewsContainer pageSize="15"/>
 
     </div>
   );
