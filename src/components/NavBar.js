@@ -6,14 +6,14 @@ export default function NavBar() {
     const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
     return (
-        <nav className='bg-black text-gray-200 py-4 md:px-16'>
-
-            <div className='hidden md:flex gap-2 md:gap-4 items-center justify-between'>
+        <nav className='bg-black text-gray-200 py-4 px-4 lg:px-16'>
+            {/* Desktop and Tablet View */}
+            <div className='hidden md:flex flex-col lg:flex-row gap-4 items-center justify-between'>
                 <div className='text-3xl font-bold'>
                     <a href='/'>Need For News</a>
                 </div>
 
-                <div className='text-lg flex gap-2 md:gap-6'>
+                <div className='text-lg flex flex-wrap justify-center gap-2 md:gap-4'>
                     <button className='hover:bg-slate-900 py-1 px-4 rounded-lg hover:text-gray-50'>Entertainment</button>
                     <button className='hover:bg-slate-900 py-1 px-4 rounded-lg hover:text-gray-50'>Sports</button>
                     <button className='hover:bg-slate-900 py-1 px-4 rounded-lg hover:text-gray-50'>Politics</button>
@@ -21,12 +21,12 @@ export default function NavBar() {
                     <button className='hover:bg-slate-900 py-1 px-4 rounded-lg hover:text-gray-50'>India</button>
                 </div>
 
-                <div className="relative">
+                <div className="relative w-full lg:w-auto mt-4 lg:mt-0">
                     <form className="flex items-center">
                         <input
                             type="text"
                             placeholder="Search"
-                            className="bg-gray-700 text-white outline-none focus:outline-none rounded-lg pl-10 pr-4 py-2"
+                            className="bg-gray-700 text-white outline-none focus:outline-none rounded-lg pl-10 pr-4 py-2 w-full"
                         />
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -40,13 +40,12 @@ export default function NavBar() {
                 </div>
             </div>
 
-
-            <div className="md:hidden px-4">
+            {/* Mobile View */}
+            <div className="md:hidden">
                 <div className='flex items-center justify-between'>
                     <div className='text-2xl font-bold'>
                         <a href='/'>Need For News</a>
                     </div>
-
 
                     <button
                         onClick={toggleMenu}
@@ -68,7 +67,6 @@ export default function NavBar() {
                         </svg>
                     </button>
                 </div>
-
 
                 {isMenuOpen && (
                     <div className="mt-4 space-y-4">
