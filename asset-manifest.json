@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Need-For-News/static/css/main.56fd5fdd.css",
+    "main.js": "/Need-For-News/static/js/main.d11f4594.js",
+    "static/js/453.7101cc65.chunk.js": "/Need-For-News/static/js/453.7101cc65.chunk.js",
+    "index.html": "/Need-For-News/index.html",
+    "main.56fd5fdd.css.map": "/Need-For-News/static/css/main.56fd5fdd.css.map",
+    "main.d11f4594.js.map": "/Need-For-News/static/js/main.d11f4594.js.map",
+    "453.7101cc65.chunk.js.map": "/Need-For-News/static/js/453.7101cc65.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.56fd5fdd.css",
+    "static/js/main.d11f4594.js"
+  ]
+}
