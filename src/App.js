@@ -1,7 +1,7 @@
 // App.js
 import './App.css';
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
+import { HashRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import NavBar from './components/NavBar';
 import NewsContainer from './components/NewsContainer';
 import LoadingBar from 'react-top-loading-bar'
