@@ -60,7 +60,7 @@ const SearchResults = ({ searchQuery, setProgress }) => {
     return (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
             {articles.map((article) => (
-                <NewsItem
+                article.title !== "[Removed]" && <NewsItem
                     key={article.url}
                     title={article.title}
                     description={article.description}

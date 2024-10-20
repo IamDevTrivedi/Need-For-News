@@ -5,7 +5,10 @@ import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-d
 import NavBar from './components/NavBar';
 import NewsContainer from './components/NewsContainer';
 import LoadingBar from 'react-top-loading-bar'
-import  SearchResults  from './components/SearchResults' ; 
+import SearchResults from './components/SearchResults';
+import Footer from './components/Footer'
+import Privacy from './components/Privacy'
+import About from './components/About';
 
 
 const categories = ['general', 'business', 'entertainment', 'health', 'science', 'sports', 'technology'];
@@ -38,12 +41,17 @@ function App() {
           {/* New Search Route */}
           <Route
             path="/search/:query"
-            element={<SearchResults setProgress={setProgress} />}
+            element={<SearchResults setProgress={setProgress} />
+            }
           />
+
+          <Route path="/privacy" element={<Privacy />} />
+
+          <Route path="/about" element={<About />} />
 
           <Route path="*" element={
 
-            <section className="bg-white dark:bg-gray-900">
+            <section className="bg-white dark:bg-gray-900 min-h-screen">
               <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
                 <div className="mx-auto max-w-screen-sm text-center">
                   <h1 className="mb-4 text-7xl tracking-tight font-extrabold lg:text-9xl text-primary-600 dark:text-primary-500">404</h1>
@@ -57,6 +65,9 @@ function App() {
           } />
 
         </Routes>
+
+        <Footer />
+
       </div>
     </Router>
   );
