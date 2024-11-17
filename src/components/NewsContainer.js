@@ -18,8 +18,10 @@ class NewsContainer extends React.Component {
       category: props.category,
       country: props.country,
     };
-    // this.apiKey = process.env.REACT_APP_NEWS_API_KEY ;
-    this.apiKey = "72712e699a1646b985a89f64cac39d87";
+    
+    this.apiKey = process.env.REACT_APP_NEWS_API_KEY;
+    // console.log(this.apiKey);
+    
     this.setProgress = props.setProgress;
   }
 
