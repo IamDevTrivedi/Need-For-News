@@ -45,10 +45,6 @@ Need-For-News is a React-based web application that provides users with the late
 
 Contributions are welcome! Please fork the repository and create a pull request with your changes.
 
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
 ## Acknowledgements
 
 - [News API](https://newsapi.org/) for providing the news data
