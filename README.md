@@ -1,5 +1,3 @@
-Here’s your updated README with your details added:
-
 # Need-For-News 🗞️
 
 A modern, feature-rich React application that delivers real-time news from various sources. Built with performance and user experience in mind, Need-For-News offers a seamless way to stay updated with the latest headlines across different categories.
