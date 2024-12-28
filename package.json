@@ -1,7 +1,6 @@
 {
   "name": "need-for-news",
   "version": "1.0.0",
-  "homepage": "https://IamDevTrivedi.github.io/Need-For-News",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.13.3",
@@ -49,7 +48,6 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.4.20",
-    "gh-pages": "^6.2.0",
     "postcss": "^8.4.47",
     "tailwindcss": "^3.4.14"
   }
