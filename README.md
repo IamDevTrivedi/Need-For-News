@@ -1,4 +1,4 @@
-# Need-For-News 🗞️
+# Need-For-News 🛎️
 
 A modern, feature-rich React application that delivers real-time news from various sources. Built with performance and user experience in mind, Need-For-News offers a seamless way to stay updated with the latest headlines across different categories.
 
@@ -8,17 +8,17 @@ A modern, feature-rich React application that delivers real-time news from vario
 
 ## ✨ Features
 
-- **Real-time News Updates**: Fetch and display the latest news articles from reliable sources
-- **Category Navigation**: Browse news across multiple categories:
-  - General
-  - Business
-  - Technology
-  - Sports
-  - Health
-- **Smart Search**: Instantly find relevant news articles
-- **Infinite Scrolling**: Seamless content loading for better user experience
-- **Dark Theme**: Eye-friendly dark mode for comfortable reading
-- **Responsive Design**: Optimized for all devices - mobile, tablet, and desktop
+- **Real-time News Updates**: Fetch and display the latest news articles from reliable sources  
+- **Category Navigation**: Browse news across multiple categories:  
+  - General  
+  - Business  
+  - Technology  
+  - Sports  
+  - Health  
+- **Smart Search**: Instantly find relevant news articles  
+- **Infinite Scrolling**: Seamless content loading for better user experience  
+- **Dark Theme**: Eye-friendly dark mode for comfortable reading  
+- **Responsive Design**: Optimized for all devices - mobile, tablet, and desktop  
 - **Loading Progress Bar**: Visual feedback for content loading states
 
 ## 🚀 Quick Start
@@ -64,7 +64,7 @@ npm start
 
 Visit `http://localhost:3000` in your browser to see the application running.
 
-## 🛠️ Tech Stack
+## 🔧 Tech Stack
 
 ### Core
 
@@ -76,8 +76,8 @@ Visit `http://localhost:3000` in your browser to see the application running.
 
 - **Material Tailwind React**: ^2.1.10
 - **MUI (Material-UI)**: ^6.1.4
-- **Emotion**:
-  - @emotion/react: ^11.13.3
+- **Emotion**:  
+  - @emotion/react: ^11.13.3  
   - @emotion/styled: ^11.13.0
 - **React Icons**: ^5.3.0
 
@@ -96,4 +96,17 @@ Create a `.env` file in the root directory with the following variables:
 REACT_APP_NEWS_API_KEY=your_api_key_here
 ```
 
-Made with ❤️ by [Dev Trivedi](https://github.com/IamDevTrivedi)
+### Running the Application
+
+1. After setting up the environment variables and starting the development server, open the browser and navigate to `http://localhost:3000`.
+2. Use the category navigation bar to explore different news topics.
+3. Utilize the search bar to find articles relevant to your interests.
+4. Enable dark mode for a comfortable reading experience at night.
+
+## Contact
+
+- **GitHub**: [IamDevTrivedi](https://github.com/IamDevTrivedi)  
+- **LinkedIn**: [Dev Trivedi](https://www.linkedin.com/in/contact-devtrivedi)
+
+
+Crafted with care and passion by [Dev Trivedi](https://github.com/IamDevTrivedi).
