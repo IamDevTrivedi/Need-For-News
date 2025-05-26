@@ -2,10 +2,6 @@
 
 A modern, feature-rich React application that delivers real-time news from various sources. Built with performance and user experience in mind, Need-For-News offers a seamless way to stay updated with the latest headlines across different categories.
 
-![License](https://img.shields.io/badge/license-MIT-blue.svg)
-![React Version](https://img.shields.io/badge/react-18.3.1-blue.svg)
-![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)
-
 ## ✨ Features
 
 - **Real-time News Updates**: Fetch and display the latest news articles from reliable sources  
@@ -86,27 +82,14 @@ Visit `http://localhost:3000` in your browser to see the application running.
 - **React Infinite Scroll Component**: ^6.1.0
 - **React Top Loading Bar**: ^2.3.1
 
-## 📖 Usage
+## Author
 
-### Environment Variables
+**Dev Trivedi**
 
-Create a `.env` file in the root directory with the following variables:
-
-```env
-REACT_APP_NEWS_API_KEY=your_api_key_here
-```
-
-### Running the Application
-
-1. After setting up the environment variables and starting the development server, open the browser and navigate to `http://localhost:3000`.
-2. Use the category navigation bar to explore different news topics.
-3. Utilize the search bar to find articles relevant to your interests.
-4. Enable dark mode for a comfortable reading experience at night.
-
-## Contact
-
-- **GitHub**: [IamDevTrivedi](https://github.com/IamDevTrivedi)  
-- **LinkedIn**: [Dev Trivedi](https://www.linkedin.com/in/contact-devtrivedi)
+- GitHub: [@IamDevTrivedi](https://github.com/IamDevTrivedi)
+- LinkedIn: [Dev Trivedi](https://www.linkedin.com/in/contact-devtrivedi/)
 
 
-Crafted with care and passion by [Dev Trivedi](https://github.com/IamDevTrivedi).
+---
+
+Made with ❤️ by [Dev Trivedi](https://github.com/IamDevTrivedi)
